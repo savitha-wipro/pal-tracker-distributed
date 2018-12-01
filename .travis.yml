@@ -33,7 +33,7 @@ jobs:
           - "applications/allocations-server/build/libs/allocations-server.jar"
           - "applications/backlog-server/build/libs/backlog-server.jar"
           - "applications/registration-server/build/libs/registration-server.jar"
-          - "applications/timesheets-server/build/libs/timesheets-server.jar"
+#         - "applications/timesheets-server/build/libs/timesheets-server.jar"
         skip_cleanup: true
     - stage: deploy
       language: java
@@ -49,7 +49,7 @@ jobs:
         username: $CF_USERNAME
         password: $CF_PASSWORD
         organization: $CF_ORG
-        space: training
+        space: review
     - stage: deploy
       language: bash
       script:
@@ -68,16 +68,16 @@ jobs:
       before_deploy:
         - cp manifest-registration.yml manifest.yml
         - echo "Deploying registration server $RELEASE_TAG"
-      deploy:
-        <<: *cloudfoundry
-    - stage: deploy
-      language: bash
-      script:
-        - echo "Downloading timesheets server $RELEASE_TAG"
-        - wget -P applications/timesheets-server/build/libs https://github.com/$GITHUB_USERNAME/pal-tracker-distributed/releases/download/$RELEASE_TAG/timesheets-server.jar
-      before_deploy:
-        - cp manifest-timesheets.yml manifest.yml
-        - echo "Deploying timesheets server $RELEASE_TAG"
+#      deploy:
+#        <<: *cloudfoundry
+#    - stage: deploy
+#      language: bash
+#      script:
+#        - echo "Downloading timesheets server $RELEASE_TAG"
+#        - wget -P applications/timesheets-server/build/libs https://github.com/$GITHUB_USERNAME/pal-tracker-distributed/releases/download/$RELEASE_TAG/timesheets-server.jar
+#     before_deploy:
+#        - cp manifest-timesheets.yml manifest.yml
+#       - echo "Deploying timesheets server $RELEASE_TAG"
       deploy:
         <<: *cloudfoundry
     - stage: migrate
@@ -88,5 +88,5 @@ jobs:
         - sudo apt-get update
         - sudo apt-get install cf-cli
       script:
-        - cf login -a $CF_API_URL -u $CF_USERNAME -p $CF_PASSWORD -o $CF_ORG -s training
+        - cf login -a $CF_API_URL -u $CF_USERNAME -p $CF_PASSWORD -o $CF_ORG -s review
         - ./gradlew cfMigrate

@@ -3,7 +3,7 @@ applications:
   path: ./applications/allocations-server/build/libs/allocations-server.jar
   routes:
   - route: allocations-pal-savitha-review.apps.dev.pcf-aws.com
-  memory: 650M
+  memory: 700M
   instances: 1
   env:
     REGISTRATION_SERVER_ENDPOINT: http://registration-pal-savitha-review.apps.dev.pcf-aws.com

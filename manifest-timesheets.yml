@@ -3,7 +3,7 @@ applications:
   path: ./applications/timesheets-server/build/libs/timesheets-server.jar
   routes:
   - route: timesheets-pal-savitha-review.apps.dev.pcf-aws.com
-  memory: 650M
+  memory: 700M
   instances: 1
   env:
     REGISTRATION_SERVER_ENDPOINT: http://registration-pal-savitha-review.apps.dev.pcf-aws.com
