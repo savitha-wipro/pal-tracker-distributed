@@ -4,6 +4,7 @@ applications:
   routes:
   - route: timesheets-pal-savitha-review.cfapps.io
   memory: 620M
+  disk_quota: 620M
   instances: 1
   env:
     REGISTRATION_SERVER_ENDPOINT: http://registration-pal-savitha-review.cfapps.io
