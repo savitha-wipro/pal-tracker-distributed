@@ -2,11 +2,10 @@ applications:
 - name: tracker-backlog
   path: ./applications/backlog-server/build/libs/backlog-server.jar
   routes:
-  - route: backlog-pal-savitha-review.cfapps.io
-  memory: 620M
-  disk_quota: 620M
+  - route: backlog-pal-{UNIQUE_IDENTIFIER}.apps.chicken.pal.pivotal.io
+  memory: 1G
   instances: 1
   env:
-    REGISTRATION_SERVER_ENDPOINT: http://registration-pal-savitha-review.cfapps.io
+    REGISTRATION_SERVER_ENDPOINT: http://FILL_ME_IN
   services:
   - tracker-backlog-database
