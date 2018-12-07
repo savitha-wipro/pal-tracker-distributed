@@ -4,7 +4,7 @@ applications:
   routes:
   - route: allocations-pal-savitha-review.cfapps.io
   memory: 650M
-  disk_quota: 620M
+  disk_quota: 650M
   instances: 1
   env:
   services:
