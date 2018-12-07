@@ -3,8 +3,8 @@ applications:
   path: ./applications/allocations-server/build/libs/allocations-server.jar
   routes:
   - route: allocations-pal-savitha-review.cfapps.io
-  memory: 650M
-  disk_quota: 650M
+  memory: 800M
+  disk_quota: 800M
   instances: 1
   env:
   services:
