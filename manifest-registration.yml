@@ -3,7 +3,7 @@ applications:
   path: ./applications/registration-server/build/libs/registration-server.jar
   routes:
   - route: registration-pal-savitha-review.cfapps.io
-  memory: 620M
+  memory: 650M
   disk_quota: 620M
   instances: 1
   services:
