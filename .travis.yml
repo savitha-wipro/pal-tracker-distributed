@@ -50,14 +50,14 @@ jobs:
         password: $CF_PASSWORD
         organization: $CF_ORG
         space: review
-    - stage: deploy
-      language: bash
-      script:
-        - echo "Downloading backlog server $RELEASE_TAG"
-        - wget -P applications/backlog-server/build/libs https://github.com/$GITHUB_USERNAME/pal-tracker-distributed/releases/download/$RELEASE_TAG/backlog-server.jar
-      before_deploy:
-        - cp manifest-backlog.yml manifest.yml
-        - echo "Deploying backlog server $RELEASE_TAG"
+#    - stage: deploy
+#      language: bash
+#      script:
+#        - echo "Downloading backlog server $RELEASE_TAG"
+#        - wget -P applications/backlog-server/build/libs https://github.com/$GITHUB_USERNAME/pal-tracker-distributed/releases/download/$RELEASE_TAG/backlog-server.jar
+#      before_deploy:
+#        - cp manifest-backlog.yml manifest.yml
+#        - echo "Deploying backlog server $RELEASE_TAG"
       deploy:
         <<: *cloudfoundry
     - stage: deploy
