@@ -2,8 +2,11 @@ applications:
 - name: tracker-registration
   path: ./applications/registration-server/build/libs/registration-server.jar
   routes:
-  - route: registration-pal-{UNIQUE_IDENTIFIER}.apps.chicken.pal.pivotal.io
-  memory: 1G
+  - route: registration-pal-savitha-review.cfapps.io
+  memory: 620M
+  disk_quota: 620M
   instances: 1
   services:
   - tracker-registration-database
+  - tracker-service-registry
+
