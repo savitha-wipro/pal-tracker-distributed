@@ -6,7 +6,6 @@ applications:
   memory: 800M
   disk_quota: 800M
   instances: 1
-  env:
   services:
   - tracker-allocations-database
   - tracker-service-registry
