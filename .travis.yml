@@ -31,7 +31,7 @@ jobs:
         api_key: $GITHUB_OAUTH_TOKEN
         file:
           - "applications/allocations-server/build/libs/allocations-server.jar"
-          - "applications/backlog-server/build/libs/backlog-server.jar"
+#         - "applications/backlog-server/build/libs/backlog-server.jar"
           - "applications/registration-server/build/libs/registration-server.jar"
 #         - "applications/timesheets-server/build/libs/timesheets-server.jar"
         skip_cleanup: true
@@ -58,8 +58,8 @@ jobs:
 #      before_deploy:
 #        - cp manifest-backlog.yml manifest.yml
 #        - echo "Deploying backlog server $RELEASE_TAG"
-      deploy:
-        <<: *cloudfoundry
+#      deploy:
+#        <<: *cloudfoundry
     - stage: deploy
       language: bash
       script:
@@ -74,7 +74,7 @@ jobs:
 #      language: bash
 #      script:
 #        - echo "Downloading timesheets server $RELEASE_TAG"
-#       - wget -P applications/timesheets-server/build/libs https://github.com/$GITHUB_USERNAME/pal-tracker-distributed/releases/download/$RELEASE_TAG/timesheets-server.jar
+#        - wget -P applications/timesheets-server/build/libs https://github.com/$GITHUB_USERNAME/pal-tracker-distributed/releases/download/$RELEASE_TAG/timesheets-server.jar
 #      before_deploy:
 #        - cp manifest-timesheets.yml manifest.yml
 #        - echo "Deploying timesheets server $RELEASE_TAG"

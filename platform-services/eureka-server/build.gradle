@@ -4,12 +4,11 @@ apply plugin: "io.spring.dependency-management"
 dependencyManagement {
     imports {
         mavenBom "org.springframework.cloud:spring-cloud-dependencies:$springCloudDependenciesVersion"
-
     }
 }
 
 dependencies {
     compile "org.springframework.boot:spring-boot-starter-web"
     compile "org.springframework.cloud:spring-cloud-starter-eureka-server"
-    compile 'javax.servlet:javax.servlet-api'
+
 }
