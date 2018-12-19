@@ -3,8 +3,8 @@ applications:
   path: ./applications/backlog-server/build/libs/backlog-server.jar
   routes:
   - route: backlog-pal-savitha-review.cfapps.io
-  memory: 650G
-  disk_quota: 650G
+  memory: 650M
+  disk_quota: 650M
   instances: 1
   services:
   - tracker-backlog-database
