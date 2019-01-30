@@ -2,9 +2,8 @@ applications:
 - name: tracker-backlog
   path: ./applications/backlog-server/build/libs/backlog-server.jar
   routes:
-  - route: backlog-pal-savitha-review.cfapps.io
-  memory: 800M
-  disk_quota: 800M
+  - route: backlog-pal-savitha-review.apps.dev.pcf-aws.com
+  memory: 1G
   instances: 1
   services:
   - tracker-backlog-database

@@ -49,17 +49,17 @@ jobs:
         username: $CF_USERNAME
         password: $CF_PASSWORD
         organization: $CF_ORG
-        space: development
-#    - stage: deploy
-#      language: bash
-#      script:
-#        - echo "Downloading backlog server $RELEASE_TAG"
-#        - wget -P applications/backlog-server/build/libs https://github.com/$GITHUB_USERNAME/pal-tracker-distributed/releases/download/$RELEASE_TAG/backlog-server.jar
-#      before_deploy:
-#        - cp manifest-backlog.yml manifest.yml
-#        - echo "Deploying backlog server $RELEASE_TAG"
-#      deploy:
-#       <<: *cloudfoundry
+        space: review_savitha
+    - stage: deploy
+      language: bash
+      script:
+        - echo "Downloading backlog server $RELEASE_TAG"
+        - wget -P applications/backlog-server/build/libs https://github.com/$GITHUB_USERNAME/pal-tracker-distributed/releases/download/$RELEASE_TAG/backlog-server.jar
+      before_deploy:
+        - cp manifest-backlog.yml manifest.yml
+        - echo "Deploying backlog server $RELEASE_TAG"
+      deploy:
+        <<: *cloudfoundry
     - stage: deploy
       language: bash
       script:
@@ -70,16 +70,16 @@ jobs:
         - echo "Deploying registration server $RELEASE_TAG"
       deploy:
         <<: *cloudfoundry
-#    - stage: deploy
-#      language: bash
-#      script:
-#        - echo "Downloading timesheets server $RELEASE_TAG"
-#        - wget -P applications/timesheets-server/build/libs https://github.com/$GITHUB_USERNAME/pal-tracker-distributed/releases/download/$RELEASE_TAG/timesheets-server.jar
-#      before_deploy:
-#        - cp manifest-timesheets.yml manifest.yml
-#        - echo "Deploying timesheets server $RELEASE_TAG"
-#     deploy:
-#        <<: *cloudfoundry
+    - stage: deploy
+      language: bash
+      script:
+        - echo "Downloading timesheets server $RELEASE_TAG"
+        - wget -P applications/timesheets-server/build/libs https://github.com/$GITHUB_USERNAME/pal-tracker-distributed/releases/download/$RELEASE_TAG/timesheets-server.jar
+      before_deploy:
+        - cp manifest-timesheets.yml manifest.yml
+        - echo "Deploying timesheets server $RELEASE_TAG"
+      deploy:
+        <<: *cloudfoundry
     - stage: migrate
       language: java
       before_install:
@@ -88,5 +88,5 @@ jobs:
         - sudo apt-get update
         - sudo apt-get install cf-cli
       script:
-        - cf login -a $CF_API_URL -u $CF_USERNAME -p $CF_PASSWORD -o $CF_ORG -s development
+        - cf login -a $CF_API_URL -u $CF_USERNAME -p $CF_PASSWORD -o $CF_ORG -s review_savitha
         - ./gradlew cfMigrate

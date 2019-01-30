@@ -2,9 +2,8 @@ applications:
 - name: tracker-timesheets
   path: ./applications/timesheets-server/build/libs/timesheets-server.jar
   routes:
-  - route: timesheets-pal-savitha-review.cfapps.io
-  memory: 800M
-  disk_quota: 800M
+  - route: timesheets-pal-savitha-review.apps.dev.pcf-aws.com
+  memory: 1G
   instances: 1
   services:
   - tracker-timesheets-database

@@ -2,9 +2,8 @@ applications:
 - name: tracker-registration
   path: ./applications/registration-server/build/libs/registration-server.jar
   routes:
-  - route: registration-pal-savitha-review.cfapps.io
-  memory: 800M
-  disk_quota: 800M
+  - route: registration-pal-savitha-review.apps.dev.pcf-aws.com
+  memory: 1G
   instances: 1
   services:
   - tracker-registration-database
