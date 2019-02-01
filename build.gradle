@@ -1,4 +1,5 @@
 import io.pivotal.pal.tracker.gradlebuild.DependenciesGraphPlugin
+
 buildscript {
     ext {
         springBootVersion = "1.5.7.RELEASE"
@@ -6,7 +7,6 @@ buildscript {
         mysqlVersion = "6.0.6"
         springCloudDependenciesVersion = "Edgware.RELEASE"
         springCloudServicesVersion = "1.6.0.RELEASE"
-       
     }
 
     repositories {
@@ -19,7 +19,9 @@ buildscript {
         classpath "mysql:mysql-connector-java:$mysqlVersion"
     }
 }
+
 apply plugin: DependenciesGraphPlugin
+
 subprojects {
     group "io.pivotal.pal.tracker"
 
@@ -37,12 +39,10 @@ subprojects {
         compile "com.fasterxml.jackson.core:jackson-annotations:2.8.4"
         compile "org.slf4j:slf4j-api:1.7.10"
         compile "com.sun.xml.bind:jaxb-xjc:2.1.7"
+        compile "org.apache.httpcomponents:httpclient:4.5.7"
 
         testCompile "junit:junit:4.12"
         testCompile "org.mockito:mockito-core:2.2.26"
         testCompile "org.assertj:assertj-core:3.8.0"
     }
-}
-
-dependencies {
 }

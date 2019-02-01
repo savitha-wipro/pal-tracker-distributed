@@ -2,9 +2,10 @@ applications:
 - name: tracker-allocations
   path: ./applications/allocations-server/build/libs/allocations-server.jar
   routes:
-  - route: allocations-pal-savitha-review.apps.dev.pcf-aws.com
+  - route: allocations-pal-{UNIQUE_IDENTIFIER}.apps.chicken.pal.pivotal.io
   memory: 1G
   instances: 1
   services:
   - tracker-allocations-database
   - tracker-service-registry
+  - tracker-circuit-breaker-dashboard
