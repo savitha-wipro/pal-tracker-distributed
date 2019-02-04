@@ -24,7 +24,7 @@ jobs:
       script: ./gradlew clean build
       before_deploy:
         - git config --local user.name "savitha-wipro"
-        - git config --local user.email "sridhar.savitha@wipro.com"
+        - git config --local user.email "sridhar.savitha@wipro.com.com"
         - git tag -f $RELEASE_TAG
       deploy:
         provider: releases
